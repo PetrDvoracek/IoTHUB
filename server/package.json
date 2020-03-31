@@ -1,0 +1,14 @@
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "BE (server) for IoT HUB. VSB-TUO",
+  "author": "Pedro",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "dependencies": {
+    "influx": "^5.5.1",
+    "express": "^4.16.1"
+  }
+}
