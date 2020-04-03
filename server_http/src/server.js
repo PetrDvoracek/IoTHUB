@@ -15,9 +15,9 @@ app.get("/", (req, res) => {
 });
 app.post("/api", (req, res) => {
   const influxPoint = {
-    measurement: req.body.id,
-    tags: { rssi: req.body.rssi },
-    fields: { data: req.body.data }
+    measurement: req.body.measurement,
+    tags: req.body.tags,
+    fields: req.body.fields
   };
   db.writePoints([influxPoint])
     .then(() => {
