@@ -6,7 +6,7 @@ IoT HUB provides simple HTTP interface to store any timeseries data in [InfluxDB
 
 You need to have `docker` and `docker-compose` installed on your machine. In most cases, if you work with IoT technlogy like SigFox you will need to have **public ip adress**
 
-## Set up server
+## Set Server up
 First create `.env` file  which defines variables `HTTP_PORT` and `HTTP_IP` on which the API runs. If you work with any IoT technology as SigFox, you need to use port with public access! Fire the `docker-compose build && docker-compose up` command to run the server. All the dependencies will be downloaded and installed in docker image - you do not have to install anything manually.
 ```
 HTTP_PORT=5000
@@ -45,3 +45,7 @@ curl --location --request POST 'http://127.0.0.1:5000/api' \
 	}
 }'
 ```
+
+## Set Grafana up
+
+After setting server up grafana runs by default on `http://127.0.0.1:3000`. Use username and password `admin` to enter the GUI in browser and 
