@@ -12,6 +12,8 @@ I was unable to create default database `iot` (where the data is stored) during 
 
 Once you `docker-compose up`, run `CONTAINER_ID=$(docker ps --format "{{.ID}} {{.Image}}" | grep influx | awk '{print $1}')` which will save the influxdb container id to variable `CONTAINER_ID`. Now ssh into container and run influx client `docker exec -it ${CONTAINER_ID} influx`. Run `SHOW DATABASES`, if `iot` is present - you have already created it before, escape with `Ctrl+d`, you are done, problem solved. If `iot` is **not present** run `CREATE DATABASE iot`, problem should be solved.
 
+> If you run multiple containers with infludb image select the CONTAINER_ID manually using basic `docker ps`!
+
 ## Grafana "The connection was reset"
 
 Grafana starts too long, if you start the services and immediately go to its frontend `http://127.0.0.1:3000` you will receive `The connection was reset` error. Just wait for approximately one minute, then the frontend should be accesible.
